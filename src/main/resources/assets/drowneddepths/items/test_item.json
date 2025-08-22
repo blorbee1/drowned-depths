@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "drowneddepths:item/test_item"
+  }
+}

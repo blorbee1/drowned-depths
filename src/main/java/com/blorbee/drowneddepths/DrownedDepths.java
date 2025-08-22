@@ -1,5 +1,6 @@
 package com.blorbee.drowneddepths;
 
+import com.blorbee.drowneddepths.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,6 +12,10 @@ public class DrownedDepths implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+        LOGGER.info("Drowned Depths starting initialization.");
 
+        ModItems.registerModItems();
+
+        LOGGER.info("Drowned Depths initialized.");
 	}
 }
