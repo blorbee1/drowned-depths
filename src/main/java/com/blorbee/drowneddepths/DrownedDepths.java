@@ -1,5 +1,6 @@
 package com.blorbee.drowneddepths;
 
+import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
@@ -15,6 +16,7 @@ public class DrownedDepths implements ModInitializer {
         LOGGER.info("Drowned Depths starting initialization.");
 
         ModItems.registerModItems();
+        ModBlocks.registerModBlocks();
 
         LOGGER.info("Drowned Depths initialized.");
 	}

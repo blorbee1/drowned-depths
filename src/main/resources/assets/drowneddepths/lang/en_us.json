@@ -1,3 +1,5 @@
 {
-  "item.drowneddepths.test_item": "Test Item"
+  "item.drowneddepths.test_item": "Test Item",
+
+  "block.drowneddepths.test_block": "Test Block"
 }
