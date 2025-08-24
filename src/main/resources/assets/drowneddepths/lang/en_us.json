@@ -1,5 +1,8 @@
 {
   "item.drowneddepths.test_item": "Test Item",
+  "item.drowneddepths.test_custom_item": "Test Custom Item",
 
-  "block.drowneddepths.test_block": "Test Block"
+  "block.drowneddepths.test_block": "Test Block",
+
+  "itemgroup.drowneddepths.drowned_depths_group": "Drowned Depths"
 }
