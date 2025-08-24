@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.datagen;
 
 import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -28,5 +29,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.TEST_FENCE_GATE);
         valueLookupBuilder(BlockTags.WALLS)
                 .add(ModBlocks.TEST_WALL);
+
+        valueLookupBuilder(ModTags.Blocks.NEEDS_TEST_TOOL)
+                .add(ModBlocks.TEST_CUSTOM_BLOCK)
+                .addTag(BlockTags.NEEDS_IRON_TOOL);
     }
 }

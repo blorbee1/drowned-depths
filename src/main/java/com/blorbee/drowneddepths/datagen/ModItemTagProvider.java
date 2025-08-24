@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Items;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -20,5 +21,19 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.TEST_ITEM)
                 .add(Items.COAL)
                 .add(Items.STICK);
+
+        valueLookupBuilder(ModTags.Items.TEST_TOOL_MATERIALS)
+                .add(ModItems.TEST_ITEM);
+
+        valueLookupBuilder(ItemTags.SWORDS)
+                .add(ModItems.TEST_SWORD);
+        valueLookupBuilder(ItemTags.PICKAXES)
+                .add(ModItems.TEST_PICKAXE);
+        valueLookupBuilder(ItemTags.SHOVELS)
+                .add(ModItems.TEST_SHOVEL);
+        valueLookupBuilder(ItemTags.AXES)
+                .add(ModItems.TEST_AXE);
+        valueLookupBuilder(ItemTags.HOES)
+                .add(ModItems.TEST_HOE);
     }
 }

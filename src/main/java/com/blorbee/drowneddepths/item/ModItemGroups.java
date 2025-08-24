@@ -32,6 +32,12 @@ public class ModItemGroups {
                       entries.add(ModBlocks.TEST_WALL);
                       entries.add(ModBlocks.TEST_DOOR);
                       entries.add(ModBlocks.TEST_TRAPDOOR);
+
+                      entries.add(ModItems.TEST_SWORD);
+                      entries.add(ModItems.TEST_PICKAXE);
+                      entries.add(ModItems.TEST_SHOVEL);
+                      entries.add(ModItems.TEST_AXE);
+                      entries.add(ModItems.TEST_HOE);
                     }).build());
 
     public static void registerItemGroups() {

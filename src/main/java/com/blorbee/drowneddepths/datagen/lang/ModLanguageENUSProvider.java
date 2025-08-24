@@ -25,7 +25,9 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         addItemWithTooltip(translationBuilder, ModItems.TEST_CUSTOM_ITEM, "Test Custom Item", "does some really cool stuff #2!");
         translationBuilder.add(ModItems.TEST_FOOD, "Test Food");
 
-        addBlockWithTooltip(translationBuilder, ModBlocks.TEST_CUSTOM_BLOCK, "Test Block", "does some really cool stuff!");
+        addBlockWithTooltip(translationBuilder, ModBlocks.TEST_CUSTOM_BLOCK, "Test Custom Block", "does some really cool stuff!");
+        translationBuilder.add(ModBlocks.TEST_BLOCK, "Test Block");
+
         translationBuilder.add(ModBlocks.TEST_STAIRS, "Test Stairs");
         translationBuilder.add(ModBlocks.TEST_SLAB, "Test Slab");
         translationBuilder.add(ModBlocks.TEST_PRESSURE_PLATE, "Test Pressure Plate");
@@ -35,6 +37,12 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.TEST_WALL, "Test Wall");
         translationBuilder.add(ModBlocks.TEST_DOOR, "Test Door");
         translationBuilder.add(ModBlocks.TEST_TRAPDOOR, "Test Trapdoor");
+
+        translationBuilder.add(ModItems.TEST_SWORD, "Test Sword");
+        translationBuilder.add(ModItems.TEST_PICKAXE, "Test Pickaxe");
+        translationBuilder.add(ModItems.TEST_SHOVEL, "Test Shovel");
+        translationBuilder.add(ModItems.TEST_AXE, "Test Axe");
+        translationBuilder.add(ModItems.TEST_HOE, "Test Hoe");
 
         addItemGroup(translationBuilder, ModItemGroups.DROWNED_DEPTHS_GROUP, "Drowned Depths");
     }

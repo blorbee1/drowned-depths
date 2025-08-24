@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.recipe.RecipeExporter;
 import net.minecraft.data.recipe.RecipeGenerator;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
@@ -38,8 +39,73 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .input('#', ModItems.TEST_FOOD)
                         .criterion(hasItem(ModItems.TEST_FOOD), conditionsFromItem(ModItems.TEST_FOOD))
                         .offerTo(exporter);
-
                 offerShapelessRecipe(ModItems.TEST_FOOD, ModBlocks.TEST_CUSTOM_BLOCK, "test_food_from_test_custom_block", 8);
+
+                offerSword(ModItems.TEST_SWORD, ModItems.TEST_ITEM, Items.STICK);
+                offerPickaxe(ModItems.TEST_PICKAXE, ModItems.TEST_ITEM, Items.STICK);
+                offerShovel(ModItems.TEST_SHOVEL, ModItems.TEST_ITEM, Items.STICK);
+                offerAxe(ModItems.TEST_AXE, ModItems.TEST_ITEM, Items.STICK);
+                offerHoe(ModItems.TEST_HOE, ModItems.TEST_ITEM, Items.STICK);
+            }
+
+            private void offerSword(Item result, Item input, Item handle) {
+                createShaped(RecipeCategory.COMBAT, result)
+                        .pattern("I")
+                        .pattern("I")
+                        .pattern("H")
+                        .input('I', input)
+                        .input('H', handle)
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .criterion(hasItem(handle), conditionsFromItem(handle))
+                        .offerTo(exporter);
+            }
+
+            private void offerPickaxe(Item result, Item input, Item handle) {
+                createShaped(RecipeCategory.COMBAT, result)
+                        .pattern("III")
+                        .pattern(" H ")
+                        .pattern(" H ")
+                        .input('I', input)
+                        .input('H', handle)
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .criterion(hasItem(handle), conditionsFromItem(handle))
+                        .offerTo(exporter);
+            }
+
+            private void offerShovel(Item result, Item input, Item handle) {
+                createShaped(RecipeCategory.COMBAT, result)
+                        .pattern("I")
+                        .pattern("H")
+                        .pattern("H")
+                        .input('I', input)
+                        .input('H', handle)
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .criterion(hasItem(handle), conditionsFromItem(handle))
+                        .offerTo(exporter);
+            }
+
+            private void offerAxe(Item result, Item input, Item handle) {
+                createShaped(RecipeCategory.COMBAT, result)
+                        .pattern("II")
+                        .pattern("IH")
+                        .pattern(" H")
+                        .input('I', input)
+                        .input('H', handle)
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .criterion(hasItem(handle), conditionsFromItem(handle))
+                        .offerTo(exporter);
+            }
+
+            private void offerHoe(Item result, Item input, Item handle) {
+                createShaped(RecipeCategory.COMBAT, result)
+                        .pattern("II")
+                        .pattern(" H")
+                        .pattern(" H")
+                        .input('I', input)
+                        .input('H', handle)
+                        .criterion(hasItem(input), conditionsFromItem(input))
+                        .criterion(hasItem(handle), conditionsFromItem(handle))
+                        .offerTo(exporter);
             }
         };
     }

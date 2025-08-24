@@ -3,9 +3,7 @@ package com.blorbee.drowneddepths.item;
 import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.item.custom.TestCustomItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
@@ -17,6 +15,17 @@ public class ModItems {
     public static final Item TEST_CUSTOM_ITEM = register("test_custom_item", TestCustomItem::new, new Item.Settings().maxDamage(32));
     public static final Item TEST_FOOD = register("test_food", Item::new,
             new Item.Settings().food(ModFoodComponents.TEST_FOOD_COMPONENT, ModFoodComponents.TEST_CONSUMABLE_COMPONENT));
+
+    public static final Item TEST_SWORD = register("test_sword", Item::new,
+            new Item.Settings().sword(ModToolMaterials.TEST, 3, -2.4f));
+    public static final Item TEST_PICKAXE = register("test_pickaxe", Item::new,
+            new Item.Settings().pickaxe(ModToolMaterials.TEST, 1, -2.8f));
+    public static final Item TEST_SHOVEL = register("test_shovel",
+            settings -> new ShovelItem(ModToolMaterials.TEST, 1.5f, -3.0f, settings), new Item.Settings());
+    public static final Item TEST_AXE = register("test_axe",
+            settings -> new AxeItem(ModToolMaterials.TEST, 6, -3.2f, settings), new Item.Settings());
+    public static final Item TEST_HOE = register("test_hoe",
+            settings -> new HoeItem(ModToolMaterials.TEST, 0, -3f, settings), new Item.Settings());
 
     private static Item register(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));
