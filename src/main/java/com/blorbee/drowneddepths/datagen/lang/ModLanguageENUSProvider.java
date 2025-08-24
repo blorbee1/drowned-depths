@@ -2,6 +2,7 @@ package com.blorbee.drowneddepths.datagen.lang;
 
 import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.effect.ModStatusEffects;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.sound.ModSounds;
@@ -54,7 +55,9 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
 
         addItemGroup(translationBuilder, ModItemGroups.DROWNED_DEPTHS_GROUP, "Drowned Depths");
 
-        addSound(translationBuilder, ModSounds.TEST_SOUND, "Test Sound");
+        translationBuilder.add(ModSounds.TEST_SOUND, "Test Sound");
+
+        translationBuilder.add(ModStatusEffects.SLIMEY.value(), "Slimey");
     }
 
     private void addItemGroup(TranslationBuilder translationBuilder, ItemGroup group, String translation) {
@@ -70,10 +73,5 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(block, blockTranslation);
         String blockId = Registries.BLOCK.getId(block).getPath();
         translationBuilder.add("block." + DrownedDepths.MOD_ID + "." + blockId + ".tooltip", tooltipTranslation);
-    }
-
-    private void addSound(TranslationBuilder translationBuilder, SoundEvent sound, String translation) {
-        String id = Registries.SOUND_EVENT.getId(sound).getPath();
-        translationBuilder.add("sounds." + DrownedDepths.MOD_ID + "." + id, translation);
     }
 }
