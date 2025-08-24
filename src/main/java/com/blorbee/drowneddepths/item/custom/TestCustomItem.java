@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.item.custom;
 
 import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.component.ModDataComponentTypes;
 import com.blorbee.drowneddepths.item.ModItems;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.block.Block;
@@ -34,6 +35,10 @@ public class TestCustomItem extends Item {
             if (!itemStack.isOf(ModItems.TEST_CUSTOM_ITEM.asItem()))
                 return;
             list.add(Text.translatable("item.drowneddepths.test_custom_item.tooltip"));
+
+            if (itemStack.get(ModDataComponentTypes.COORDINATES) != null) {
+                list.add(Text.literal("Last Block Changed at " + itemStack.get(ModDataComponentTypes.COORDINATES)));
+            }
         }));
     }
 
@@ -47,6 +52,8 @@ public class TestCustomItem extends Item {
             context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
                     item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
             world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
+
+            context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
         }
 
         return ActionResult.SUCCESS;

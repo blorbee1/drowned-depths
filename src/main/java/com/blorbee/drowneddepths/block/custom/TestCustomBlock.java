@@ -32,7 +32,6 @@ public class TestCustomBlock extends Block {
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        DrownedDepths.LOGGER.info("playing sound");
         world.playSound(null, pos, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.BLOCKS, 1f, 1f);
         return ActionResult.SUCCESS;
     }
