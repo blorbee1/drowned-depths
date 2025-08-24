@@ -2,6 +2,7 @@ package com.blorbee.drowneddepths;
 
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.component.ModDataComponentTypes;
+import com.blorbee.drowneddepths.item.ModArmorMaterials;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.item.ModToolMaterials;
@@ -26,6 +27,7 @@ public class DrownedDepths implements ModInitializer {
         ModBlocks.registerModBlocks();
         ModDataComponentTypes.registerModDataComponentTypes();
         ModToolMaterials.registerModToolMaterials();
+        ModArmorMaterials.registerModArmorMaterials();
 
         FuelRegistryEvents.BUILD.register(((builder, context) -> {
             builder.add(ModItems.TEST_FOOD, context.baseSmeltTime() / 4);

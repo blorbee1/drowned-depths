@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "drowneddepths:test"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "drowneddepths:test"
+      }
+    ]
+  }
+}

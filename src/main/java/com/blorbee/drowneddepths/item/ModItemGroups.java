@@ -39,6 +39,11 @@ public class ModItemGroups {
                       entries.add(ModItems.TEST_AXE);
                       entries.add(ModItems.TEST_HOE);
                       entries.add(ModItems.TEST_HAMMER);
+
+                      entries.add(ModItems.TEST_HELMET);
+                      entries.add(ModItems.TEST_CHESTPLATE);
+                      entries.add(ModItems.TEST_LEGGINGS);
+                      entries.add(ModItems.TEST_BOOTS);
                     }).build());
 
     public static void registerItemGroups() {

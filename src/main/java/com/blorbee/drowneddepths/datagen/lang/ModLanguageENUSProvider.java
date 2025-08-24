@@ -45,6 +45,11 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.TEST_HOE, "Test Hoe");
         translationBuilder.add(ModItems.TEST_HAMMER, "Test Hammer");
 
+        translationBuilder.add(ModItems.TEST_HELMET, "Test Helmet");
+        translationBuilder.add(ModItems.TEST_CHESTPLATE, "Test Chestplate");
+        translationBuilder.add(ModItems.TEST_LEGGINGS, "Test Leggings");
+        translationBuilder.add(ModItems.TEST_BOOTS, "Test Boots");
+
         addItemGroup(translationBuilder, ModItemGroups.DROWNED_DEPTHS_GROUP, "Drowned Depths");
     }
 

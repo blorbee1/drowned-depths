@@ -35,5 +35,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.TEST_AXE);
         valueLookupBuilder(ItemTags.HOES)
                 .add(ModItems.TEST_HOE);
+
+        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.TEST_HELMET)
+                .add(ModItems.TEST_CHESTPLATE)
+                .add(ModItems.TEST_LEGGINGS)
+                .add(ModItems.TEST_BOOTS);
     }
 }
