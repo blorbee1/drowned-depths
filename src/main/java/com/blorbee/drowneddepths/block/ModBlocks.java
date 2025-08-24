@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.block;
 
 import com.blorbee.drowneddepths.DrownedDepths;
+import com.blorbee.drowneddepths.block.custom.TestCustomBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -22,6 +23,10 @@ public class ModBlocks {
             .requiresTool()
             .sounds(BlockSoundGroup.AMETHYST_BLOCK));
 
+    public static final Block TEST_CUSTOM_BLOCK = register("test_custom_block", TestCustomBlock::new, AbstractBlock.Settings.create()
+            .strength(1f)
+            .requiresTool());
+
     private static void registerBlockItem(String name, Block block) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));
         final Item.Settings settings = new Item.Settings()
@@ -41,6 +46,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(TEST_BLOCK);
+            entries.add(TEST_CUSTOM_BLOCK);
         });
     }
 }
