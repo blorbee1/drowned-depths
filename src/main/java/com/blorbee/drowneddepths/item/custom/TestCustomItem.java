@@ -33,7 +33,7 @@ public class TestCustomItem extends Item {
         ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> {
             if (!itemStack.isOf(ModItems.TEST_CUSTOM_ITEM.asItem()))
                 return;
-            list.add(Text.translatable("block.drowneddepths.test_custom_item.tooltip"));
+            list.add(Text.translatable("item.drowneddepths.test_custom_item.tooltip"));
         }));
     }
 

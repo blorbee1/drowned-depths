@@ -15,10 +15,23 @@ public class ModItemGroups {
             Identifier.of(DrownedDepths.MOD_ID, "drowned_depths"),
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack(ModItems.TEST_ITEM))
-                    .displayName(Text.translatable("itemgroup.drowneddepths.drowned_depths_group"))
+                    .displayName(Text.translatable("itemgroup.drowneddepths.drowned_depths"))
                     .entries((displayContext, entries) -> {
                       entries.add(ModItems.TEST_ITEM);
+                      entries.add(ModItems.TEST_FOOD);
+                      entries.add(ModItems.TEST_CUSTOM_ITEM);
+
                       entries.add(ModBlocks.TEST_BLOCK);
+                      entries.add(ModBlocks.TEST_CUSTOM_BLOCK);
+                      entries.add(ModBlocks.TEST_STAIRS);
+                      entries.add(ModBlocks.TEST_SLAB);
+                      entries.add(ModBlocks.TEST_PRESSURE_PLATE);
+                      entries.add(ModBlocks.TEST_BUTTON);
+                      entries.add(ModBlocks.TEST_FENCE);
+                      entries.add(ModBlocks.TEST_FENCE_GATE);
+                      entries.add(ModBlocks.TEST_WALL);
+                      entries.add(ModBlocks.TEST_DOOR);
+                      entries.add(ModBlocks.TEST_TRAPDOOR);
                     }).build());
 
     public static void registerItemGroups() {

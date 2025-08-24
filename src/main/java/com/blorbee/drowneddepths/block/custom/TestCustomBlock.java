@@ -26,7 +26,7 @@ public class TestCustomBlock extends Block {
         ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> {
             if (!itemStack.isOf(ModBlocks.TEST_CUSTOM_BLOCK.asItem()))
                 return;
-            list.add(Text.translatable("item.drowneddepths.test_custom_block.tooltip"));
+            list.add(Text.translatable("block.drowneddepths.test_custom_block.tooltip"));
         }));
     }
 
