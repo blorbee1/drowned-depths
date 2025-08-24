@@ -1,6 +1,7 @@
 {
   "item.drowneddepths.test_item": "Test Item",
   "item.drowneddepths.test_custom_item": "Test Custom Item",
+  "item.drowneddepths.test_food": "Test Food",
 
   "block.drowneddepths.test_block": "Test Block",
   "block.drowneddepths.test_custom_block": "Test Custom Block",

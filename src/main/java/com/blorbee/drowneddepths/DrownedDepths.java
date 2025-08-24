@@ -5,6 +5,7 @@ import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,6 +20,10 @@ public class DrownedDepths implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
+
+        FuelRegistryEvents.BUILD.register(((builder, context) -> {
+            builder.add(ModItems.TEST_FOOD, context.baseSmeltTime() / 4);
+        }));
 
         LOGGER.info("Drowned Depths initialized.");
 	}
