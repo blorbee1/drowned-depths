@@ -3,6 +3,7 @@ package com.blorbee.drowneddepths.item.custom;
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.component.ModDataComponentTypes;
 import com.blorbee.drowneddepths.item.ModItems;
+import com.blorbee.drowneddepths.sound.ModSounds;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -51,7 +52,7 @@ public class TestCustomItem extends Item {
             world.setBlockState(context.getBlockPos(), CHISEL_MAP.get(block).getDefaultState());
             context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
                     item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
-            world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
+            world.playSound(null, context.getBlockPos(), ModSounds.TEST_SOUND, SoundCategory.BLOCKS, 1f, 1f);
 
             context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
         }

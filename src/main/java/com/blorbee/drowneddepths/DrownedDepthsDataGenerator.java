@@ -15,6 +15,7 @@ public class DrownedDepthsDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModLootTableProvider::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeProvider::new);
+        pack.addProvider(ModSoundsProvider::new);
 
         pack.addProvider(ModLanguageENUSProvider::new);
 	}

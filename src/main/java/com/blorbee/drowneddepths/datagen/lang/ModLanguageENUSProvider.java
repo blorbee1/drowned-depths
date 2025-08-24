@@ -4,6 +4,7 @@ import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
+import com.blorbee.drowneddepths.sound.ModSounds;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
@@ -11,6 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.sound.SoundEvent;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -51,6 +53,8 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.TEST_BOOTS, "Test Boots");
 
         addItemGroup(translationBuilder, ModItemGroups.DROWNED_DEPTHS_GROUP, "Drowned Depths");
+
+        addSound(translationBuilder, ModSounds.TEST_SOUND, "Test Sound");
     }
 
     private void addItemGroup(TranslationBuilder translationBuilder, ItemGroup group, String translation) {
@@ -66,5 +70,10 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(block, blockTranslation);
         String blockId = Registries.BLOCK.getId(block).getPath();
         translationBuilder.add("block." + DrownedDepths.MOD_ID + "." + blockId + ".tooltip", tooltipTranslation);
+    }
+
+    private void addSound(TranslationBuilder translationBuilder, SoundEvent sound, String translation) {
+        String id = Registries.SOUND_EVENT.getId(sound).getPath();
+        translationBuilder.add("sounds." + DrownedDepths.MOD_ID + "." + id, translation);
     }
 }
