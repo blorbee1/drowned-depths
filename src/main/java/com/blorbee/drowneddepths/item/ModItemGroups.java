@@ -38,6 +38,7 @@ public class ModItemGroups {
                       entries.add(ModItems.TEST_SHOVEL);
                       entries.add(ModItems.TEST_AXE);
                       entries.add(ModItems.TEST_HOE);
+                      entries.add(ModItems.TEST_HAMMER);
                     }).build());
 
     public static void registerItemGroups() {

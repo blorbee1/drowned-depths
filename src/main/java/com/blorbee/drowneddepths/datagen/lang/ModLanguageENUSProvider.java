@@ -43,6 +43,7 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.TEST_SHOVEL, "Test Shovel");
         translationBuilder.add(ModItems.TEST_AXE, "Test Axe");
         translationBuilder.add(ModItems.TEST_HOE, "Test Hoe");
+        translationBuilder.add(ModItems.TEST_HAMMER, "Test Hammer");
 
         addItemGroup(translationBuilder, ModItemGroups.DROWNED_DEPTHS_GROUP, "Drowned Depths");
     }

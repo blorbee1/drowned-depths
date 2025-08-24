@@ -5,8 +5,10 @@ import com.blorbee.drowneddepths.component.ModDataComponentTypes;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.item.ModToolMaterials;
+import com.blorbee.drowneddepths.util.HammerUsageEvent;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +30,8 @@ public class DrownedDepths implements ModInitializer {
         FuelRegistryEvents.BUILD.register(((builder, context) -> {
             builder.add(ModItems.TEST_FOOD, context.baseSmeltTime() / 4);
         }));
+
+        PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
 
         LOGGER.info("Drowned Depths initialized.");
 	}

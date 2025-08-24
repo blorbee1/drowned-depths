@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.item;
 
 import com.blorbee.drowneddepths.DrownedDepths;
+import com.blorbee.drowneddepths.item.custom.HammerItem;
 import com.blorbee.drowneddepths.item.custom.TestCustomItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
@@ -26,6 +27,9 @@ public class ModItems {
             settings -> new AxeItem(ModToolMaterials.TEST, 6, -3.2f, settings), new Item.Settings());
     public static final Item TEST_HOE = register("test_hoe",
             settings -> new HoeItem(ModToolMaterials.TEST, 0, -3f, settings), new Item.Settings());
+
+    public static final Item TEST_HAMMER = register("test_hammer",
+            settings -> new HammerItem(ModToolMaterials.TEST, 7, -3.7f, settings), new Item.Settings());
 
     private static Item register(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));
