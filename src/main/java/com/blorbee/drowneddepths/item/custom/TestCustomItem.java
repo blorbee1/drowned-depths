@@ -1,6 +1,8 @@
 package com.blorbee.drowneddepths.item.custom;
 
 import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.item.ModItems;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
@@ -10,6 +12,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
 
@@ -26,6 +29,12 @@ public class TestCustomItem extends Item {
 
     public TestCustomItem(Settings settings) {
         super(settings);
+
+        ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> {
+            if (!itemStack.isOf(ModItems.TEST_CUSTOM_ITEM.asItem()))
+                return;
+            list.add(Text.translatable("block.drowneddepths.test_custom_item.tooltip"));
+        }));
     }
 
     @Override

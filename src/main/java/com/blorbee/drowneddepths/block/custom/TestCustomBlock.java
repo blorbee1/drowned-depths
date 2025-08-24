@@ -1,7 +1,9 @@
 package com.blorbee.drowneddepths.block.custom;
 
 import com.blorbee.drowneddepths.DrownedDepths;
-import com.blorbee.drowneddepths.item.ModItems;
+import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.util.ModTags;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -11,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -19,6 +22,12 @@ import net.minecraft.world.World;
 public class TestCustomBlock extends Block {
     public TestCustomBlock(Settings settings) {
         super(settings);
+
+        ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> {
+            if (!itemStack.isOf(ModBlocks.TEST_CUSTOM_BLOCK.asItem()))
+                return;
+            list.add(Text.translatable("item.drowneddepths.test_custom_block.tooltip"));
+        }));
     }
 
     @Override
@@ -31,10 +40,14 @@ public class TestCustomBlock extends Block {
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if (entity instanceof ItemEntity item) {
-            if (item.getStack().getItem() == ModItems.TEST_ITEM) {
+            if (isValidItem(item.getStack())) {
                 item.setStack(new ItemStack(Items.DIAMOND, item.getStack().getCount()));
             }
         }
         super.onSteppedOn(world, pos, state, entity);
+    }
+
+    private boolean isValidItem(ItemStack stack) {
+        return stack.isIn(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 }
