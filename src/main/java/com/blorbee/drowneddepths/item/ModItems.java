@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.item;
 
 import com.blorbee.drowneddepths.DrownedDepths;
+import com.blorbee.drowneddepths.item.custom.FullSetArmorItem;
 import com.blorbee.drowneddepths.item.custom.HammerItem;
 import com.blorbee.drowneddepths.item.custom.TestCustomItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -32,14 +33,14 @@ public class ModItems {
     public static final Item TEST_HAMMER = register("test_hammer",
             settings -> new HammerItem(ModToolMaterials.TEST, 7, -3.7f, settings), new Item.Settings());
 
-    public static final Item TEST_HELMET = register("test_helmet", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.TEST_ARMOR, EquipmentType.HELMET));
-    public static final Item TEST_CHESTPLATE = register("test_chestplate", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.TEST_ARMOR, EquipmentType.CHESTPLATE));
-    public static final Item TEST_LEGGINGS = register("test_leggings", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.TEST_ARMOR, EquipmentType.LEGGINGS));
-    public static final Item TEST_BOOTS = register("test_boots", Item::new,
-            new Item.Settings().armor(ModArmorMaterials.TEST_ARMOR, EquipmentType.BOOTS));
+    public static final Item TEST_HELMET = register("test_helmet",
+            settings -> new FullSetArmorItem(ModArmorMaterials.TEST_ARMOR, EquipmentType.HELMET, settings), new Item.Settings());
+    public static final Item TEST_CHESTPLATE = register("test_chestplate",
+            settings -> new FullSetArmorItem(ModArmorMaterials.TEST_ARMOR, EquipmentType.CHESTPLATE, settings), new Item.Settings());
+    public static final Item TEST_LEGGINGS = register("test_leggings",
+            settings -> new FullSetArmorItem(ModArmorMaterials.TEST_ARMOR, EquipmentType.LEGGINGS, settings), new Item.Settings());
+    public static final Item TEST_BOOTS = register("test_boots",
+            settings -> new FullSetArmorItem(ModArmorMaterials.TEST_ARMOR, EquipmentType.BOOTS, settings), new Item.Settings());
 
     private static Item register(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));

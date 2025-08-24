@@ -18,6 +18,11 @@ public class DrownedDepths implements ModInitializer {
 	public static final String MOD_ID = "drowneddepths";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+    public static final int BOOTS_INDEX = 36;
+    public static final int LEGGINGS_INDEX = 37;
+    public static final int CHESTPLATE_INDEX = 38;
+    public static final int HELMET_INDEX = 39;
+
 	@Override
 	public void onInitialize() {
         LOGGER.info("Drowned Depths starting initialization.");
