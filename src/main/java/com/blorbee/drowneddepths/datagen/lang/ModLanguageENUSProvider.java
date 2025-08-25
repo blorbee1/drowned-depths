@@ -45,6 +45,14 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.TEST_DOOR, "Test Door");
         translationBuilder.add(ModBlocks.TEST_TRAPDOOR, "Test Trapdoor");
 
+        translationBuilder.add(ModBlocks.TEST_LOG, "Test Log");
+        translationBuilder.add(ModBlocks.TEST_WOOD, "Test Wood");
+        translationBuilder.add(ModBlocks.STRIPPED_TEST_LOG, "Test Stripped Log");
+        translationBuilder.add(ModBlocks.STRIPPED_TEST_WOOD, "Test Stripped Wood");
+        translationBuilder.add(ModBlocks.TEST_LEAVES, "Test Leaves");
+        translationBuilder.add(ModBlocks.TEST_PLANKS, "Test Planks");
+        translationBuilder.add(ModBlocks.TEST_SAPLING, "Test Sapling");
+
         translationBuilder.add(ModItems.TEST_SWORD, "Test Sword");
         translationBuilder.add(ModItems.TEST_PICKAXE, "Test Pickaxe");
         translationBuilder.add(ModItems.TEST_SHOVEL, "Test Shovel");

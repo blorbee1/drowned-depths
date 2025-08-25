@@ -44,6 +44,14 @@ public class ModItemGroups {
                       entries.add(ModItems.TEST_CHESTPLATE);
                       entries.add(ModItems.TEST_LEGGINGS);
                       entries.add(ModItems.TEST_BOOTS);
+
+                      entries.add(ModBlocks.TEST_LOG);
+                      entries.add(ModBlocks.TEST_WOOD);
+                      entries.add(ModBlocks.STRIPPED_TEST_LOG);
+                      entries.add(ModBlocks.STRIPPED_TEST_WOOD);
+                      entries.add(ModBlocks.TEST_LEAVES);
+                      entries.add(ModBlocks.TEST_SAPLING);
+                      entries.add(ModBlocks.TEST_PLANKS);
                     }).build());
 
     public static void registerItemGroups() {

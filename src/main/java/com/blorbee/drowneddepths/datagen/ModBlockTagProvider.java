@@ -33,5 +33,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(ModTags.Blocks.NEEDS_TEST_TOOL)
                 .add(ModBlocks.TEST_CUSTOM_BLOCK)
                 .addTag(BlockTags.NEEDS_IRON_TOOL);
+
+        // prevents leaves from decaying when generating
+        valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.TEST_LOG)
+                .add(ModBlocks.STRIPPED_TEST_LOG)
+                .add(ModBlocks.TEST_WOOD)
+                .add(ModBlocks.STRIPPED_TEST_WOOD);
     }
 }

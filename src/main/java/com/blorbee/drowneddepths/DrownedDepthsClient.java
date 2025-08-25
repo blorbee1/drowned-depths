@@ -10,5 +10,7 @@ public class DrownedDepthsClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.putBlock(ModBlocks.TEST_DOOR, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.TEST_TRAPDOOR, BlockRenderLayer.CUTOUT);
+
+        BlockRenderLayerMap.putBlock(ModBlocks.TEST_SAPLING, BlockRenderLayer.CUTOUT);
     }
 }

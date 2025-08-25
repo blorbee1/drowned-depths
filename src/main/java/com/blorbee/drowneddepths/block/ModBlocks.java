@@ -2,6 +2,7 @@ package com.blorbee.drowneddepths.block;
 
 import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.block.custom.TestCustomBlock;
+import com.blorbee.drowneddepths.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -64,6 +65,18 @@ public class ModBlocks {
                     .strength(1f)
                     .requiresTool()
                     .nonOpaque());
+
+    public static final Block TEST_LOG = register("test_log", PillarBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_LOG));
+    public static final Block TEST_WOOD = register("test_wood", PillarBlock::new, AbstractBlock.Settings.copy(Blocks.OAK_WOOD));
+    public static final Block STRIPPED_TEST_LOG = register("stripped_test_log", PillarBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG));
+    public static final Block STRIPPED_TEST_WOOD = register("stripped_test_wood", PillarBlock::new, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD));
+
+    public static final Block TEST_PLANKS = register("test_planks", Block::new, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS));
+    public static final Block TEST_LEAVES = register("test_leaves",
+            settings -> new TintedParticleLeavesBlock(0.01F, settings), AbstractBlock.Settings.copy(Blocks.OAK_LEAVES));
+
+    public static final Block TEST_SAPLING = register("test_sapling",
+            settings -> new SaplingBlock(ModSaplingGenerators.TEST_WOOD, settings), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING));
 
     private static void registerBlockItem(String name, Block block) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));

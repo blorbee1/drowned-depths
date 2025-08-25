@@ -33,8 +33,16 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.TEST_SLAB, slabDrops(ModBlocks.TEST_SLAB));
         addDrop(ModBlocks.TEST_DOOR, doorDrops(ModBlocks.TEST_DOOR));
-
         multipleOreDrops(ModBlocks.TEST_CUSTOM_BLOCK, ModItems.TEST_ITEM, 2, 5);
+
+        addDrop(ModBlocks.TEST_LOG);
+        addDrop(ModBlocks.TEST_WOOD);
+        addDrop(ModBlocks.STRIPPED_TEST_LOG);
+        addDrop(ModBlocks.STRIPPED_TEST_WOOD);
+        addDrop(ModBlocks.TEST_PLANKS);
+        addDrop(ModBlocks.TEST_SAPLING);
+
+        addDrop(ModBlocks.TEST_LEAVES, leavesDrops(ModBlocks.TEST_LEAVES, ModBlocks.TEST_SAPLING, 0.0625f));
     }
 
     public void multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {

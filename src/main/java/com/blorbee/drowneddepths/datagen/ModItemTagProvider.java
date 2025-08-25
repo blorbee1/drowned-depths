@@ -1,5 +1,6 @@
 package com.blorbee.drowneddepths.datagen;
 
+import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -41,5 +42,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.TEST_CHESTPLATE)
                 .add(ModItems.TEST_LEGGINGS)
                 .add(ModItems.TEST_BOOTS);
+
+        valueLookupBuilder(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.TEST_LOG.asItem())
+                .add(ModBlocks.STRIPPED_TEST_LOG.asItem())
+                .add(ModBlocks.TEST_WOOD.asItem())
+                .add(ModBlocks.STRIPPED_TEST_WOOD.asItem());
+
+        valueLookupBuilder(ItemTags.PLANKS)
+                .add(ModBlocks.TEST_PLANKS.asItem());
     }
 }

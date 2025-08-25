@@ -14,7 +14,9 @@ import com.blorbee.drowneddepths.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,6 +43,17 @@ public class DrownedDepths implements ModInitializer {
         ModStatusEffects.registerStatusEffects();
         ModEnchantmentEffects.registerEnchantmentEffects();
         ModWorldGeneration.generateModWorldGen();
+
+        StrippableBlockRegistry.register(ModBlocks.TEST_LOG, ModBlocks.STRIPPED_TEST_LOG);
+        StrippableBlockRegistry.register(ModBlocks.TEST_WOOD, ModBlocks.STRIPPED_TEST_WOOD);
+
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.TEST_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.TEST_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_TEST_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_TEST_WOOD, 5, 5);
+
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.TEST_LEAVES, 30, 60);
+        FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.TEST_PLANKS, 5, 20);
 
         FuelRegistryEvents.BUILD.register(((builder, context) -> {
             builder.add(ModItems.TEST_FOOD, context.baseSmeltTime() / 4);
