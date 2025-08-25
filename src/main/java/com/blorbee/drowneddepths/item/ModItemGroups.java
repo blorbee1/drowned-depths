@@ -54,7 +54,7 @@ public class ModItemGroups {
                       entries.add(ModBlocks.TEST_PLANKS);
                     }).build());
 
-    public static void registerItemGroups() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering item groups for " + DrownedDepths.MOD_ID);
     }
 }

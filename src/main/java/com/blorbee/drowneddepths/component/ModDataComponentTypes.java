@@ -17,7 +17,7 @@ public class ModDataComponentTypes {
                 builderOperator.apply(ComponentType.builder()).build());
     }
 
-    public static void registerModDataComponentTypes() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering data component types for " + DrownedDepths.MOD_ID);
     }
 }

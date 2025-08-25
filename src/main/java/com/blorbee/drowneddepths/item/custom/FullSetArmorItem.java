@@ -1,6 +1,5 @@
 package com.blorbee.drowneddepths.item.custom;
 
-import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.item.ModArmorMaterials;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
@@ -44,10 +43,10 @@ public class FullSetArmorItem extends Item {
     }
 
     private boolean hasFullSuitOfArmorOn(PlayerEntity player) {
-        ItemStack boots = player.getInventory().getStack(DrownedDepths.BOOTS_INDEX);
-        ItemStack leggings = player.getInventory().getStack(DrownedDepths.LEGGINGS_INDEX);
-        ItemStack chestplate = player.getInventory().getStack(DrownedDepths.CHESTPLATE_INDEX);
-        ItemStack helmet = player.getInventory().getStack(DrownedDepths.HELMET_INDEX);
+        ItemStack boots = player.getInventory().getStack(ModArmorMaterials.BOOTS_INDEX);
+        ItemStack leggings = player.getInventory().getStack(ModArmorMaterials.LEGGINGS_INDEX);
+        ItemStack chestplate = player.getInventory().getStack(ModArmorMaterials.CHESTPLATE_INDEX);
+        ItemStack helmet = player.getInventory().getStack(ModArmorMaterials.HELMET_INDEX);
         return !boots.isEmpty() && !leggings.isEmpty() && !chestplate.isEmpty() && !helmet.isEmpty();
     }
 
@@ -72,10 +71,10 @@ public class FullSetArmorItem extends Item {
     }
 
     private boolean hasCorrectArmorOn(ArmorMaterial armorMaterial, PlayerEntity player) {
-        Item boots = player.getInventory().getStack(DrownedDepths.BOOTS_INDEX).getItem();
-        Item leggings = player.getInventory().getStack(DrownedDepths.LEGGINGS_INDEX).getItem();
-        Item chestplate = player.getInventory().getStack(DrownedDepths.CHESTPLATE_INDEX).getItem();
-        Item helmet = player.getInventory().getStack(DrownedDepths.HELMET_INDEX).getItem();
+        Item boots = player.getInventory().getStack(ModArmorMaterials.BOOTS_INDEX).getItem();
+        Item leggings = player.getInventory().getStack(ModArmorMaterials.LEGGINGS_INDEX).getItem();
+        Item chestplate = player.getInventory().getStack(ModArmorMaterials.CHESTPLATE_INDEX).getItem();
+        Item helmet = player.getInventory().getStack(ModArmorMaterials.HELMET_INDEX).getItem();
 
         if (!(boots instanceof FullSetArmorItem) || !(leggings instanceof FullSetArmorItem) || !(chestplate instanceof FullSetArmorItem) || !(helmet instanceof FullSetArmorItem))
             return false;

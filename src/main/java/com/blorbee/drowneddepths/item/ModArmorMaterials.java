@@ -36,6 +36,11 @@ public class ModArmorMaterials {
             TEST_ARMOR_MATERIAL_KEY
     );
 
+    public static final int BOOTS_INDEX = 36;
+    public static final int LEGGINGS_INDEX = 37;
+    public static final int CHESTPLATE_INDEX = 38;
+    public static final int HELMET_INDEX = 39;
+
     private static RegistryKey<EquipmentAsset> registerKey(String name) {
         return RegistryKey.of(EquipmentAssetKeys.REGISTRY_KEY, Identifier.of(DrownedDepths.MOD_ID, name));
     }
@@ -57,7 +62,7 @@ public class ModArmorMaterials {
         );
     }
 
-    public static void registerModArmorMaterials() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering armor materials for " + DrownedDepths.MOD_ID);
     }
 }

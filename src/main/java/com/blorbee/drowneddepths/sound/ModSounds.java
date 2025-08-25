@@ -14,7 +14,7 @@ public class ModSounds {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
     }
 
-    public static void registerModSounds() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering sounds for " + DrownedDepths.MOD_ID);
     }
 }

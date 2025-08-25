@@ -47,7 +47,7 @@ public class ModItems {
         return Items.register(key, factory, settings);
     }
 
-    public static void registerModItems() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering items for " + DrownedDepths.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {

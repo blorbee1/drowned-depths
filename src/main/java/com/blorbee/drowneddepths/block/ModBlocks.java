@@ -92,7 +92,7 @@ public class ModBlocks {
         return block;
     }
 
-    public static void registerModBlocks() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering mod blocks for " + DrownedDepths.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {

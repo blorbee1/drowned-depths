@@ -16,7 +16,7 @@ public class ModEnchantmentEffects {
         return Registry.register(Registries.ENCHANTMENT_ENTITY_EFFECT_TYPE, Identifier.of(DrownedDepths.MOD_ID, name), codec);
     }
 
-    public static void registerEnchantmentEffects() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering enchantment effects for " + DrownedDepths.MOD_ID);
     }
 }

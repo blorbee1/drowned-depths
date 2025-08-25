@@ -21,7 +21,7 @@ public class ModStatusEffects {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(DrownedDepths.MOD_ID, name), effect);
     }
 
-    public static void registerStatusEffects() {
+    public static void register() {
         DrownedDepths.LOGGER.info("Registering status effects for " + DrownedDepths.MOD_ID);
     }
 }
