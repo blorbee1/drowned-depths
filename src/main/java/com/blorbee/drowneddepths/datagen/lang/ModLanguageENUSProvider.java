@@ -3,15 +3,18 @@ package com.blorbee.drowneddepths.datagen.lang;
 import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.effect.ModStatusEffects;
+import com.blorbee.drowneddepths.enchantment.ModEnchantments;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.sound.ModSounds;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.sound.SoundEvent;
 
@@ -58,6 +61,8 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModSounds.TEST_SOUND, "Test Sound");
 
         translationBuilder.add(ModStatusEffects.SLIMEY.value(), "Slimey");
+
+        addEnchantment(translationBuilder, ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker");
     }
 
     private void addItemGroup(TranslationBuilder translationBuilder, ItemGroup group, String translation) {
@@ -73,5 +78,10 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(block, blockTranslation);
         String blockId = Registries.BLOCK.getId(block).getPath();
         translationBuilder.add("block." + DrownedDepths.MOD_ID + "." + blockId + ".tooltip", tooltipTranslation);
+    }
+
+    private void addEnchantment(TranslationBuilder translationBuilder, RegistryKey<Enchantment> enchantment, String translation) {
+        String id = enchantment.getValue().getPath();
+        translationBuilder.add("enchantment." + DrownedDepths.MOD_ID + "." + id, translation);
     }
 }

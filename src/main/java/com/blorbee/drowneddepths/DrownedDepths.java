@@ -3,6 +3,7 @@ package com.blorbee.drowneddepths;
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.component.ModDataComponentTypes;
 import com.blorbee.drowneddepths.effect.ModStatusEffects;
+import com.blorbee.drowneddepths.enchantment.ModEnchantmentEffects;
 import com.blorbee.drowneddepths.item.ModArmorMaterials;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
@@ -37,6 +38,7 @@ public class DrownedDepths implements ModInitializer {
         ModToolMaterials.registerModToolMaterials();
         ModArmorMaterials.registerModArmorMaterials();
         ModStatusEffects.registerStatusEffects();
+        ModEnchantmentEffects.registerEnchantmentEffects();
 
         FuelRegistryEvents.BUILD.register(((builder, context) -> {
             builder.add(ModItems.TEST_FOOD, context.baseSmeltTime() / 4);
