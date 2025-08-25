@@ -10,6 +10,7 @@ import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.item.ModToolMaterials;
 import com.blorbee.drowneddepths.sound.ModSounds;
 import com.blorbee.drowneddepths.util.HammerUsageEvent;
+import com.blorbee.drowneddepths.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
@@ -33,12 +34,13 @@ public class DrownedDepths implements ModInitializer {
         ModItemGroups.registerItemGroups();
         ModItems.registerModItems();
         ModBlocks.registerModBlocks();
-        ModSounds.registerSounds();
+        ModSounds.registerModSounds();
         ModDataComponentTypes.registerModDataComponentTypes();
         ModToolMaterials.registerModToolMaterials();
         ModArmorMaterials.registerModArmorMaterials();
         ModStatusEffects.registerStatusEffects();
         ModEnchantmentEffects.registerEnchantmentEffects();
+        ModWorldGeneration.generateModWorldGen();
 
         FuelRegistryEvents.BUILD.register(((builder, context) -> {
             builder.add(ModItems.TEST_FOOD, context.baseSmeltTime() / 4);

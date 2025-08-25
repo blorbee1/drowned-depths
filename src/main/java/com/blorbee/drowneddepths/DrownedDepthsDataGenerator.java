@@ -3,6 +3,8 @@ package com.blorbee.drowneddepths;
 import com.blorbee.drowneddepths.datagen.*;
 import com.blorbee.drowneddepths.datagen.lang.ModLanguageENUSProvider;
 import com.blorbee.drowneddepths.enchantment.ModEnchantments;
+import com.blorbee.drowneddepths.world.ModConfiguredFeatures;
+import com.blorbee.drowneddepths.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -27,5 +29,7 @@ public class DrownedDepthsDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void buildRegistry(RegistryBuilder registryBuilder) {
         registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
     }
 }
