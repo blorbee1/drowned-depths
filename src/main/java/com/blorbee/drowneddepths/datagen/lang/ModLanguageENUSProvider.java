@@ -7,6 +7,7 @@ import com.blorbee.drowneddepths.enchantment.ModEnchantments;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.sound.ModSounds;
+import com.blorbee.drowneddepths.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
@@ -63,6 +64,12 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModStatusEffects.SLIMEY.value(), "Slimey");
 
         addEnchantment(translationBuilder, ModEnchantments.LIGHTNING_STRIKER, "Lightning Striker");
+
+        translationBuilder.add(ModTags.Items.TRANSFORMABLE_ITEMS, "Transformable Items");
+        translationBuilder.add(ModTags.Items.TEST_TOOL_MATERIALS, "Test Tool Materials");
+
+        translationBuilder.add(ModTags.Blocks.INCORRECT_FOR_TEST_TOOL, "Incorrect for Test Tool");
+        translationBuilder.add(ModTags.Blocks.NEEDS_TEST_TOOL, "Needs Test Tool");
     }
 
     private void addItemGroup(TranslationBuilder translationBuilder, ItemGroup group, String translation) {
