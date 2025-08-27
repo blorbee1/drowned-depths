@@ -19,6 +19,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class PedestalBlockEntity extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
+    private float rotation = 0;
 
     public PedestalBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.PEDESTAL, pos, state);
@@ -27,6 +28,12 @@ public class PedestalBlockEntity extends BlockEntity implements ImplementedInven
     @Override
     public DefaultedList<ItemStack> getItems() {
         return inventory;
+    }
+
+    public float getRenderingRotation() {
+        rotation += 0.5f;
+        if (rotation >= 360) rotation = 0;
+        return rotation;
     }
 
     @Override
@@ -47,7 +54,15 @@ public class PedestalBlockEntity extends BlockEntity implements ImplementedInven
 
     @Override
     protected void readData(ReadView view) {
+        getItems().clear();
         super.readData(view);
         Inventories.readData(view, inventory);
+    }
+
+    @Override
+    public void markDirty() {
+        super.markDirty();
+        if (world != null)
+            world.updateListeners(pos, getCachedState(), getCachedState(), 3);
     }
 }
