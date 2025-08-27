@@ -6,5 +6,7 @@ public class ModWorldGeneration {
         // check the generation step order (it goes top to bottom, use ctrl + click on GenerationStep)
         ModOreGeneration.generate();
         ModTreeGeneration.generate();
+
+        ModEntitySpawns.addSpawns();
     }
 }
