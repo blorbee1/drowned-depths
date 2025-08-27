@@ -20,6 +20,7 @@ public class ModItemGroups {
                       entries.add(ModItems.TEST_ITEM);
                       entries.add(ModItems.TEST_FOOD);
                       entries.add(ModItems.TEST_CUSTOM_ITEM);
+                      entries.add(ModItems.MANTIS_SPAWN_EGG);
 
                       entries.add(ModBlocks.TEST_BLOCK);
                       entries.add(ModBlocks.TEST_CUSTOM_BLOCK);

@@ -4,6 +4,7 @@ import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.effect.ModStatusEffects;
 import com.blorbee.drowneddepths.enchantment.ModEnchantments;
+import com.blorbee.drowneddepths.entity.ModEntities;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.sound.ModSounds;
@@ -59,6 +60,7 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.TEST_AXE, "Test Axe");
         translationBuilder.add(ModItems.TEST_HOE, "Test Hoe");
         translationBuilder.add(ModItems.TEST_HAMMER, "Test Hammer");
+        translationBuilder.add(ModItems.MANTIS_SPAWN_EGG, "Mantis Spawn Egg");
 
         translationBuilder.add(ModItems.TEST_HELMET, "Test Helmet");
         translationBuilder.add(ModItems.TEST_CHESTPLATE, "Test Chestplate");
@@ -78,6 +80,8 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModTags.Blocks.INCORRECT_FOR_TEST_TOOL, "Incorrect for Test Tool");
         translationBuilder.add(ModTags.Blocks.NEEDS_TEST_TOOL, "Needs Test Tool");
+
+        translationBuilder.add(ModEntities.MANTIS, "Mantis");
     }
 
     private void addItemGroup(TranslationBuilder translationBuilder, ItemGroup group, String translation) {

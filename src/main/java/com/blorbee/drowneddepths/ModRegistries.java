@@ -1,9 +1,12 @@
 package com.blorbee.drowneddepths;
 
 import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.entity.ModEntities;
+import com.blorbee.drowneddepths.entity.custom.MantisEntity;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.util.HammerUsageEvent;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -34,5 +37,9 @@ public class ModRegistries {
 
     public static void registerEvents() {
         PlayerBlockBreakEvents.BEFORE.register(new HammerUsageEvent());
+    }
+
+    public static void registerEntityAttributes() {
+        FabricDefaultAttributeRegistry.register(ModEntities.MANTIS, MantisEntity.createAttributes());
     }
 }

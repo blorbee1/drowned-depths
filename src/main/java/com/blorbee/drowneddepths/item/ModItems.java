@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.item;
 
 import com.blorbee.drowneddepths.DrownedDepths;
+import com.blorbee.drowneddepths.entity.ModEntities;
 import com.blorbee.drowneddepths.item.custom.FullSetArmorItem;
 import com.blorbee.drowneddepths.item.custom.HammerItem;
 import com.blorbee.drowneddepths.item.custom.TestCustomItem;
@@ -41,6 +42,9 @@ public class ModItems {
             settings -> new FullSetArmorItem(ModArmorMaterials.TEST_ARMOR, EquipmentType.LEGGINGS, settings), new Item.Settings());
     public static final Item TEST_BOOTS = register("test_boots",
             settings -> new FullSetArmorItem(ModArmorMaterials.TEST_ARMOR, EquipmentType.BOOTS, settings), new Item.Settings());
+
+    public static final Item MANTIS_SPAWN_EGG = register("mantis_spawn_egg",
+            settings -> new SpawnEggItem(ModEntities.MANTIS, settings), new Item.Settings());
 
     private static Item register(String name, Function<Item.Settings, Item> factory, Item.Settings settings) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));

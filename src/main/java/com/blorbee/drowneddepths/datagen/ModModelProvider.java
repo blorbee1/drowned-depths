@@ -51,6 +51,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TEST_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.TEST_CUSTOM_ITEM, Models.GENERATED);
         itemModelGenerator.register(ModItems.TEST_FOOD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MANTIS_SPAWN_EGG, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TEST_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.TEST_PICKAXE, Models.HANDHELD);
