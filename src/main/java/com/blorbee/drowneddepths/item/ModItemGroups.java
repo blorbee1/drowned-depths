@@ -34,6 +34,7 @@ public class ModItemGroups {
                       entries.add(ModBlocks.TEST_DOOR);
                       entries.add(ModBlocks.TEST_TRAPDOOR);
                       entries.add(ModBlocks.CHAIR);
+                      entries.add(ModBlocks.PEDESTAL);
 
                       entries.add(ModItems.TEST_SWORD);
                       entries.add(ModItems.TEST_PICKAXE);

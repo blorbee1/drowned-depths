@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths;
 
 import com.blorbee.drowneddepths.block.ModBlocks;
+import com.blorbee.drowneddepths.block.entity.ModBlockEntities;
 import com.blorbee.drowneddepths.component.ModDataComponentTypes;
 import com.blorbee.drowneddepths.effect.ModStatusEffects;
 import com.blorbee.drowneddepths.enchantment.ModEnchantmentEffects;
@@ -34,6 +35,7 @@ public class DrownedDepths implements ModInitializer {
         ModStatusEffects.register();
         ModEnchantmentEffects.register();
         ModEntities.register();
+        ModBlockEntities.register();
 
         ModWorldGeneration.generate();
 

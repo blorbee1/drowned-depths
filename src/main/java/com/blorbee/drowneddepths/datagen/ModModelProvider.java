@@ -1,6 +1,5 @@
 package com.blorbee.drowneddepths.datagen;
 
-import com.blorbee.drowneddepths.DrownedDepths;
 import com.blorbee.drowneddepths.block.ModBlocks;
 import com.blorbee.drowneddepths.item.ModArmorMaterials;
 import com.blorbee.drowneddepths.item.ModItems;
@@ -10,7 +9,6 @@ import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
 import net.minecraft.client.data.TexturedModel;
-import net.minecraft.item.equipment.EquipmentAssetKeys;
 import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -46,6 +44,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerTintableCrossBlockState(ModBlocks.TEST_SAPLING, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
         blockStateModelGenerator.registerNorthDefaultHorizontalRotation(ModBlocks.CHAIR);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.PEDESTAL);
     }
 
     @Override

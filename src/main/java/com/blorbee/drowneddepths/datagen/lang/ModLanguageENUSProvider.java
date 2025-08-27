@@ -54,6 +54,7 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.TEST_PLANKS, "Test Planks");
         translationBuilder.add(ModBlocks.TEST_SAPLING, "Test Sapling");
         translationBuilder.add(ModBlocks.CHAIR, "Chair");
+        translationBuilder.add(ModBlocks.PEDESTAL, "Pedestal");
 
         translationBuilder.add(ModItems.TEST_SWORD, "Test Sword");
         translationBuilder.add(ModItems.TEST_PICKAXE, "Test Pickaxe");
