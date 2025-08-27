@@ -1,6 +1,7 @@
 package com.blorbee.drowneddepths.block;
 
 import com.blorbee.drowneddepths.DrownedDepths;
+import com.blorbee.drowneddepths.block.custom.NorthHorizontalRotationBlock;
 import com.blorbee.drowneddepths.block.custom.TestCustomBlock;
 import com.blorbee.drowneddepths.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -77,6 +78,10 @@ public class ModBlocks {
 
     public static final Block TEST_SAPLING = register("test_sapling",
             settings -> new SaplingBlock(ModSaplingGenerators.TEST_WOOD, settings), AbstractBlock.Settings.copy(Blocks.OAK_SAPLING));
+
+    public static final Block CHAIR = register("chair",
+            settings -> new NorthHorizontalRotationBlock(Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 16.0, 13.0), settings),
+            AbstractBlock.Settings.create().nonOpaque());
 
     private static void registerBlockItem(String name, Block block) {
         final RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DrownedDepths.MOD_ID, name));
