@@ -5,18 +5,26 @@ import com.blorbee.drowneddepths.item.ModItems;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.mob.MobEntity;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.storage.ReadView;
+import net.minecraft.storage.WriteView;
+import net.minecraft.util.Util;
+import net.minecraft.world.LocalDifficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,6 +32,9 @@ import org.jetbrains.annotations.Nullable;
 public class MantisEntity extends AnimalEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationCooldown = 0;
+
+    private static final TrackedData<Integer> VARIANT =
+            DataTracker.registerData(MantisEntity.class, TrackedDataHandlerRegistry.INTEGER);
 
     public MantisEntity(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
@@ -72,6 +83,59 @@ public class MantisEntity extends AnimalEntity {
 
     @Override
     public @Nullable PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
-        return ModEntities.MANTIS.create(world, SpawnReason.BREEDING);
+        MantisEntity baby = ModEntities.MANTIS.create(world, SpawnReason.BREEDING);
+        if (baby != null) {
+            MantisEntity otherParent = ((MantisEntity) entity);
+            int i = this.random.nextInt(9);
+
+            MantisVariant babyVariant;
+            if (i < 4) {
+                babyVariant = getVariant();
+            } else if (i < 8) {
+                babyVariant = otherParent.getVariant();
+            } else {
+                babyVariant = Util.getRandom(MantisVariant.values(), random);
+            }
+            baby.setVariant(babyVariant);
+        }
+
+        return baby;
+    }
+
+    @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(VARIANT, 0);
+    }
+
+    public MantisVariant getVariant() {
+        return MantisVariant.byId(getTypeVariant() & 255);
+    }
+
+    private int getTypeVariant() {
+        return dataTracker.get(VARIANT);
+    }
+
+    private void setVariant(MantisVariant variant) {
+        dataTracker.set(VARIANT, variant.getId() & 255);
+    }
+
+    @Override
+    protected void writeCustomData(WriteView view) {
+        super.writeCustomData(view);
+        view.putInt("Variant", getTypeVariant());
+    }
+
+    @Override
+    protected void readCustomData(ReadView view) {
+        super.readCustomData(view);
+        setVariant(MantisVariant.byId(view.getInt("Variant", 0)));
+    }
+
+    @Override
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
+        MantisVariant variant = Util.getRandom(MantisVariant.values(), random);
+        setVariant(variant);
+        return super.initialize(world, difficulty, spawnReason, entityData);
     }
 }
