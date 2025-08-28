@@ -84,6 +84,8 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         translationBuilder.add(ModTags.Blocks.NEEDS_TEST_TOOL, "Needs Test Tool");
 
         translationBuilder.add(ModEntities.MANTIS, "Mantis");
+
+        addBlockEntityGui(translationBuilder, "pedestal", "Pedestal");
     }
 
     private void addItemGroup(TranslationBuilder translationBuilder, ItemGroup group, String translation) {
@@ -100,9 +102,11 @@ public class ModLanguageENUSProvider extends FabricLanguageProvider {
         String blockId = Registries.BLOCK.getId(block).getPath();
         translationBuilder.add("block." + DrownedDepths.MOD_ID + "." + blockId + ".tooltip", tooltipTranslation);
     }
-
     private void addEnchantment(TranslationBuilder translationBuilder, RegistryKey<Enchantment> enchantment, String translation) {
         String id = enchantment.getValue().getPath();
         translationBuilder.add("enchantment." + DrownedDepths.MOD_ID + "." + id, translation);
+    }
+    private void addBlockEntityGui(TranslationBuilder translationBuilder, String name, String translation) {
+        translationBuilder.add("block.entity.gui." + name, translation);
     }
 }

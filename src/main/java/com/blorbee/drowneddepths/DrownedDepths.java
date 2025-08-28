@@ -10,6 +10,7 @@ import com.blorbee.drowneddepths.item.ModArmorMaterials;
 import com.blorbee.drowneddepths.item.ModItemGroups;
 import com.blorbee.drowneddepths.item.ModItems;
 import com.blorbee.drowneddepths.item.ModToolMaterials;
+import com.blorbee.drowneddepths.screen.ModScreenHandlers;
 import com.blorbee.drowneddepths.sound.ModSounds;
 import com.blorbee.drowneddepths.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -36,6 +37,7 @@ public class DrownedDepths implements ModInitializer {
         ModEnchantmentEffects.register();
         ModEntities.register();
         ModBlockEntities.register();
+        ModScreenHandlers.register();
 
         ModWorldGeneration.generate();
 
